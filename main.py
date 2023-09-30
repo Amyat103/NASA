@@ -11,6 +11,5 @@ response = json.loads(r.content)
 print(response)
 
 pic_request = requests.get(response["hdurl"])
-pic_byte = BytesIO(pic_request.content)
-pic_open = Image.open(pic_byte)
-pic_open.show()
+pic_conv = Image.open(BytesIO(pic_request.content))
+pic_conv.show()
